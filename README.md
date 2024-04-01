@@ -1,4 +1,5 @@
 <h1>***Alarms and Map Generic Project*** <br/></h1>
+<br/>Need add your "json google services" and "api key"<br/>
  <br/>Technologies Used:<br/>
 ● Gradle with  Kotlin and news Cats
 ● Java  Kotlin
