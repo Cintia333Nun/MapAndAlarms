@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/mapFragment">
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.example.mapsandalarmsapp.feature_map.view.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" >
+        <action
+            android:id="@+id/action_mapFragment_to_listAlarmsFragment"
+            app:destination="@id/listAlarmsFragment"
+            app:popUpTo="@id/mapFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/alarmFragment"
+        android:name="com.example.mapsandalarmsapp.feature_alarms.view.AlarmFragment"
+        android:label="fragment_alarm"
+        tools:layout="@layout/fragment_alarm" />
+    <fragment
+        android:id="@+id/listAlarmsFragment"
+        android:name="com.example.mapsandalarmsapp.feature_alarms.view.ListAlarmsFragment"
+        android:label="ListAlarmsFragment" >
+        <action
+            android:id="@+id/action_listAlarmsFragment_to_alarmFragment"
+            app:destination="@id/alarmFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+</navigation>

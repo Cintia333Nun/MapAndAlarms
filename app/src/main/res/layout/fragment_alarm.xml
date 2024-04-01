@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/size_20"
+    tools:context=".feature_alarms.view.AlarmFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rounded_button"
+        android:elevation="@dimen/size_4"
+        android:backgroundTint="@color/background_light"
+        android:padding="@dimen/size_50">
+
+        <TextView
+            android:id="@+id/title_alarms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add_new_alarm"
+            android:textColor="@color/color_primary_dark"
+            android:textSize="@dimen/text_26"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_add_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_20"
+            android:text="@string/add_day"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_alarms" />
+
+        <TextView
+            android:id="@+id/text_error_date_and_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/validate_date_and_time"
+            android:textAlignment="center"
+            android:textColor="@color/alert_default_error_background"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/button_add_day"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button_add_day"
+            app:layout_constraintTop_toTopOf="@+id/button_add_day" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_text_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_50"
+            app:hintTextColor="@color/color_primary_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/button_add_day"
+            app:layout_constraintTop_toBottomOf="@+id/text_error_date_and_time">
+
+            <EditText
+                android:id="@+id/edit_text_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/add_notification_title"
+                android:background="@drawable/shape_rounded_button"
+                android:hint="@string/add_notification_title"
+                android:inputType="text|textAutoComplete"
+                android:maxLines="1"
+                android:padding="@dimen/size_10"
+                android:textColorHint="@color/color_primary_dark" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_text_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_20"
+            app:hintTextColor="@color/color_primary_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/input_text_title"
+            app:layout_constraintTop_toBottomOf="@+id/input_text_title">
+
+            <EditText
+                android:id="@+id/edit_text_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/add_message_notification"
+                android:background="@drawable/shape_rounded_button"
+                android:hint="@string/add_message_notification"
+                android:inputType="textAutoComplete|textMultiLine"
+                android:maxLines="3"
+                android:padding="@dimen/size_10" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_save"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/save_alarm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_text_message" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
